@@ -1,12 +1,12 @@
 require 'bundler/setup'
 Bundler.require
 
-ActiveRecord::Base.establish_connection
+# ActiveRecord::Base.establish_connection
 
 # タイムゾーンの設定
-Time.zone = 'Tokyo'
-ActiveRecord::Base.default_timezone = :local
+# Time.zone = 'Tokyo'
+# ActiveRecord::Base.default_timezone = :local
 
-class Post < ActiveRecord::Base
+# class Post < ActiveRecord::Base
     
-end
+# end
