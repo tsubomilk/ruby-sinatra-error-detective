@@ -1,4 +1,4 @@
-ruby '3.1.0'
+# ruby '3.2.2'
 source 'https://rubygems.org'
 
 gem 'activerecord', '~> 6.1'
