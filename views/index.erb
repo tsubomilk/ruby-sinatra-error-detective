@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby Doctor</title>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1><span class="logo">Bilson</span><span class="logo-alt">Doctor</span></h1>
+    <h2>Rubyのエラーを直そう！</h2>
+    <p class="subtitle">エラーメッセージがわからなくて困ってない？<strong>Bilson Doctor</strong> なら簡単にエラーの原因と解決方法を説明するよ！<br>
+  </header>
+
+  <main>
+    <form action="/analyze" method="post">
+      <label for="goal">🛠 やりたいこと（何を作りたい？）</label>
+      <textarea name="goal" id="goal" rows="3" placeholder="例）入力フォームから名前を送信して、ページに表示したい"></textarea>
+
+      <label for="code">💻 現在のコード</label>
+      <textarea name="code" id="code" rows="8" placeholder="今書いているコードを貼り付けてください"></textarea>
+
+      <label for="error">⚠️ エラーメッセージ</label>
+      <textarea name="error" id="error" rows="4" placeholder="出てきたエラーを貼ってください"></textarea>
+
+      <label for="what_is_not_working">🤔 どこがうまく動かない？（任意）</label>
+      <textarea name="what_is_not_working" id="what_is_not_working" rows="3" placeholder="画面が変わらない、保存できない、など"></textarea>
+
+      <label for="hypothesis">💭 自分が考えた原因（任意）</label>
+      <textarea name="hypothesis" id="hypothesis" rows="3" placeholder="何が原因だと思う？（空欄でもOK）"></textarea>
+
+      <button type="submit" class="analyze-btn">🩺 診断する</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Ruby Doctor</p>
+  </footer>
+</body>
+
+</html>

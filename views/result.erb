@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>診断結果 | Bilson Doctor</title>
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1><span class="logo">Bilson</span><span class="logo-alt">Doctor</span> 🩺</h1>
+    <h2>診断結果</h2>
+    <p class="subtitle">
+      <strong>Bilson Doctor</strong> がエラーの原因と解決方法を説明するよ！
+    </p>
+  </header>
+
+  <main>
+    <section class="cheer-section">
+      <div class="bilson-message">
+        <img src="/img/bilson.png" alt="ビルソン" class="bilson-icon">
+        <div class="speech-bubble"><%= @encourage_message.gsub("\n", "<br>") %></div>
+      </div>
+    </section>
+
+    <% titles = ["🧠 原因", "🔧 解決策", "💡 修正コード例", "🌱 アドバイス"] %>
+    
+    <% @messages.each do |item| %>
+      <h2 class="section-title"><%= item[:title] %></h2>
+      <div class="bilson-message">
+        <img src="/img/bilson.png" alt="ビルソン" class="bilson-icon">
+    
+        <% formatted = item[:content]
+            .gsub(/```(\w+)?\n(.*?)```/m) do
+              lang = Regexp.last_match(1) || ''
+              code = Regexp.last_match(2)
+              "<pre><code class='language-#{lang}'>#{Rack::Utils.escape_html(code)}</code></pre>"
+            end
+            .gsub(/`([^`\n]+)`/, '<code class="inline-code">\1</code>')
+            .gsub("\n", "<br>") %>
+    
+        <div class="speech-bubble"><%= formatted %></div>
+      </div>
+    <% end %>
+
+
+
+
+    <div class="back-link">
+      <a href="/" class="analyze-btn">🔁 もう一度診断する</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Ruby Doctor</p>
+  </footer>
+</body>
+
+</html>
