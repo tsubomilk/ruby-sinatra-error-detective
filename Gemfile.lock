@@ -23,6 +23,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
+    json (2.10.2)
     method_source (1.0.0)
     mini_mime (1.1.5)
     minitest (5.18.0)
@@ -70,6 +71,7 @@ DEPENDENCIES
   bcrypt (~> 3.1)
   dotenv (~> 2.7)
   httparty
+  json
   pg (~> 1.2)
   pry
   rake (~> 13.0)
