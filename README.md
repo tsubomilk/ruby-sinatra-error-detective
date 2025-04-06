@@ -19,6 +19,8 @@ Ruby Sinatraのエラー解説に特化したWebサービスです。
 
 [🔗 公開URL（Render）](https://ruby-sinatra-error-detective.onrender.com)
 
+https://github.com/user-attachments/assets/94d521b7-583f-42d8-91eb-2a1550991858
+
 ---
 
 ## 🛠 技術スタック
