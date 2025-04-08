@@ -8,9 +8,9 @@
 </head>
 <body>
   <header>
+    <img src="/img/bilson.png" alt="ビルソン" class="bilson-header-icon">
     <h1><span class="logo">Bilson</span><span class="logo-alt">Doctor</span></h1>
-    <h2>Rubyのエラーを直そう！</h2>
-    <p class="subtitle">エラーメッセージがわからなくて困ってない？<strong>Bilson Doctor</strong> なら簡単にエラーの原因と解決方法を説明するよ！<br>
+    <p class="subtitle">エラーメッセージがわからなくて困ってない？<strong>Bilson Doctor</strong> が簡単にエラーの原因と解決方法を説明するよ！<br>
   </header>
 
   <main>
@@ -30,13 +30,25 @@
       <label for="hypothesis">💭 自分が考えた原因（任意）</label>
       <textarea name="hypothesis" id="hypothesis" rows="3" placeholder="何が原因だと思う？（空欄でもOK）"></textarea>
 
-      <button type="submit" class="analyze-btn">🩺 診断する</button>
+      <button type="submit" class="analyze-btn" id="analyze-btn">
+        <span id="analyze-text">診断する</span>
+        <span id="loading-dots" class="loading-dots" style="display: none;">診断中<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></span>
+      </button>
+
     </form>
   </main>
 
   <footer>
-    <p>© 2025 Ruby Doctor</p>
+    <p>© 2025 Bilson Doctor</p>
   </footer>
 </body>
+
+<script>
+  document.querySelector("form").addEventListener("submit", function () {
+    document.getElementById("analyze-text").style.display = "none";
+    document.getElementById("loading-dots").style.display = "inline-block";
+  });
+</script>
+
 
 </html>
